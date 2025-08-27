@@ -1,2 +1,7 @@
-Python e Ruby
 Python 
+Ruby
+React
+JavaScript
+CSS
+HTML 5
+PHP
