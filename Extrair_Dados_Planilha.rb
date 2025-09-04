@@ -1,10 +1,12 @@
-puts'-' * 60
-puts'UTILIZANDO FAKER GEM PARA EXTRAIR DADOS DE UMA PLANILHA'.center(60)
-puts'-' * 60
+corrija o erro puts '-' * 60
+puts 'UTILIZANDO FAKER GEM PARA EXTRAIR DADOS DE UMA PLANILHA'.center(60)
+puts '-' * 60
 
-require "faker"
-require 'csv'
+require "Faker"
+require "csv"
+require 'bundler'
 
+# Exemplos de uso do Faker
 puts Faker.class
 puts Faker::Name.class
 puts Faker::Name.name
@@ -15,22 +17,26 @@ puts Faker::Music.instrument
 puts Faker::Sports::Football.player
 
 # Armazena dados 20 vezes em um array
+
+dados = []
+
 20.times do
-    nome = Faker.Name.name
-    email = Faker.Internet.email
-    Telefone = Faker.PhoneNumber.PhoneNumber 
-    dados << [nome, email, telefone]
+  name = Faker::Name.name
+  email = Faker::Internet.email
+  telefone = Faker::PhoneNumber.phone_number
+  dados << [name, email, telefone]
 end
 
-# 2- Exporta para CSV
+# Exporta para CSV
+
 arquivo_csv = "data/dados_Faker.csv"
-csv.open(arquivo_csv, 'w') do |csv|
-    csv << ['Nome', 'Email', 'Telefone']
-    dados.each do |dado|
-        csv << dado
-    end
+CSV.open(arquivo_csv, 'w') do |csv|
+  csv << ['Nome', 'Email', 'Telefone']
+  dados.each do |dado|
+    csv << dado
+  end
 end
 
-puts "Dados Salvos em #{arquivo_csv} "
+puts "Dados salvos em #{arquivo_csv}"
 
-pirnt'-' * 40
+puts '-' * 40
