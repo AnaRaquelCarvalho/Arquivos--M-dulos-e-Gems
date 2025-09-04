@@ -1,6 +1,4 @@
-corrija o erro puts '-' * 60
-puts 'UTILIZANDO FAKER GEM PARA EXTRAIR DADOS DE UMA PLANILHA'.center(60)
-puts '-' * 60
+print 'UTILIZANDO FAKER GEM PARA EXTRAIR DADOS DE UMA PLANILHA'.center(60)
 
 require "Faker"
 require "csv"
@@ -37,6 +35,4 @@ CSV.open(arquivo_csv, 'w') do |csv|
   end
 end
 
-puts "Dados salvos em #{arquivo_csv}"
-
-puts '-' * 40
+print "Dados salvos em #{arquivo_csv}"
